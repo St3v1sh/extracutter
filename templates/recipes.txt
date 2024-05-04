@@ -1,0 +1,9 @@
+{
+    "type": "stonecutting",
+    "ingredient": {
+        "item": "minecraft:{{item}}"
+    },
+    "result": "minecraft:{{result}}",
+    "count": {{count}},
+    "group": "extracutter"
+}
