@@ -1,7 +1,7 @@
 {
     "parent": "minecraft:recipes/root",
     "criteria": {
-        "has_plank": {
+        "has_block": {
             "trigger": "minecraft:inventory_changed",
             "conditions": {
                 "items": [
@@ -20,13 +20,13 @@
     },
     "requirements": [
         [
-            "has_plank",
+            "has_block",
             "has_the_recipe"
         ]
     ],
     "rewards": {
         "recipes": [
-            "extracutter:{{recipe}}"
+            {{recipes}}
         ]
     }
 }
