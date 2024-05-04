@@ -26,13 +26,17 @@ archive.pipe(output);
 archive.file('templates/pack.mcmeta', { name: 'pack.mcmeta' });
 
 // Template.
+const advancementTemplate = fs.readFileSync('templates/advancements.txt', 'utf8');
 const recipeTemplate = fs.readFileSync('templates/recipes.txt', 'utf8');
 
 // Set up wooden slab recipes.
 woodPlanks.forEach(([name, suffix]) => {
     const plankName = suffix.length === 0 ? name : `${name}_${suffix}`;
     const recipeFile = `${name}_slab_from_${plankName}_extracutter`;
+    const advancement = fillTemplate(advancementTemplate, { item: plankName, recipe: recipeFile });
     const recipe = fillTemplate(recipeTemplate, { item: plankName, result: `${name}_slab`, count: '2' });
+
+    archive.append(advancement, { name: `data/extracutter/advancements/recipes/building_blocks/${recipeFile}.json` });
     archive.append(recipe, { name: `data/extracutter/recipes/${recipeFile}.json` });
 });
 
@@ -45,7 +49,10 @@ isomorphisms.forEach(isomorphism => {
             }
 
             const recipeFile = `${itemB}_from_${itemA}_extracutter`;
+            const advancement = fillTemplate(advancementTemplate, { item: itemA, recipe: recipeFile });
             const recipe = fillTemplate(recipeTemplate, { item: itemA, result: itemB, count: '1' });
+
+            archive.append(advancement, { name: `data/extracutter/advancements/recipes/building_blocks/${recipeFile}.json` });
             archive.append(recipe, { name: `data/extracutter/recipes/${recipeFile}.json` });
         });
     });

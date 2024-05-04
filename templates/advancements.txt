@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_{{item}}": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:{{item}}"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extracutter:{{recipe}}"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_{{item}}",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extracutter:{{recipe}}"
+    ]
+  },
+  "sends_telemetry_event": false
+}
