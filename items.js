@@ -1,17 +1,17 @@
-export const woodPlanks = [
-    // [Name, Suffix]
-    ['oak', 'planks'],
-    ['spruce', 'planks'],
-    ['birch', 'planks'],
-    ['jungle', 'planks'],
-    ['acacia', 'planks'],
-    ['dark_oak', 'planks'],
-    ['mangrove', 'planks'],
-    ['cherry', 'planks'],
-    ['bamboo', 'planks'],
-    ['bamboo_mosaic', ''],
-    ['crimson', 'planks'],
-    ['warped', 'planks'],
+export const woods = [
+    // [Name, Log suffix, Plank suffix]
+    ['oak', 'logs', 'planks'],
+    ['spruce', 'logs', 'planks'],
+    ['birch', 'logs', 'planks'],
+    ['jungle', 'logs', 'planks'],
+    ['acacia', 'logs', 'planks'],
+    ['dark_oak', 'logs', 'planks'],
+    ['mangrove', 'logs', 'planks'],
+    ['cherry', 'logs', 'planks'],
+    ['bamboo', 'blocks', 'planks'],
+    ['bamboo_mosaic', '', ''],
+    ['crimson', 'stems', 'planks'],
+    ['warped', 'stems', 'planks'],
 ];
 
 export const isomorphisms = [
@@ -24,8 +24,7 @@ export const isomorphisms = [
     ['dark_oak_planks', 'dark_oak_stairs'],
     ['mangrove_planks', 'mangrove_stairs'],
     ['cherry_planks', 'cherry_stairs'],
-    ['bamboo_planks', 'bamboo_stairs'],
-    ['bamboo_mosaic', 'bamboo_mosaic_stairs'],
+    ['bamboo_planks', 'bamboo_stairs', 'bamboo_mosaic', 'bamboo_mosaic_stairs'],
     ['crimson_planks', 'crimson_stairs'],
     ['warped_planks', 'warped_stairs'],
 
@@ -64,7 +63,7 @@ export const isomorphisms = [
     ['waxed_oxidized_cut_copper', 'waxed_oxidized_cut_copper_stairs'],
 ];
 
-// Exclude these recipes because they already exist in vanilla.
+// Exclude these recipes because they already exist or shouldn't exist in vanilla.
 export const existingRecipes = [
     ['stone', 'stone_stairs'],
     ['stone', 'chiseled_stone_bricks'],

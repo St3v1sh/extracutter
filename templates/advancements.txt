@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:{{item}}"
-            ]
+            "{{id_type}}": "minecraft:{{item}}"
           }
         ]
       },

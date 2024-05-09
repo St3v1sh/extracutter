@@ -1,7 +1,7 @@
 {
     "type": "stonecutting",
     "ingredient": {
-        "item": "minecraft:{{item}}"
+        "{{id_type}}": "minecraft:{{item}}"
     },
     "result": "minecraft:{{result}}",
     "count": {{count}},
